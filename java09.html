@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+</head>
+<body>
+    
+    <label> Enter the number to check it is prime number or Not:- </label>
+    <input type="number" id="txt"> 
+
+    <br><br>
+    <button type="submit" id="btn">click Me</button>
+    <p class="output"></p>
+
+
+    <script>
+        clickBtn = document.querySelector('#btn');
+        clickBtn.addEventListener('click', primeNumber);
+
+        function primeNumber() {
+          let  number = document.querySelector('#txt').value;
+          number = Math.floor(number);
+          result = '';
+          let isPrime = true;
+        
+      
+          if (number === 1) {
+    result = "1 is neither prime nor composite number.";
+}
+
+
+else if (number > 1) {
+
+   
+    for (let i = 2; i < number; i++) {
+        if (number % i == 0) {
+          isPrime = false;
+            break;
+        }
+
+       
+    }
+
+ 
+    if (isPrime) {
+        result ='it is a prime number';
+    } else {
+      result ='it is not an prime number';
+    }
+} 
+      
+ 
+ 
+ 
+ 
+ 
+          
+          
+
+          document.querySelector('.output').innerHTML= "the given"+" " +number+ "  number:- "+result;  
+         
+                }
+
+        
+
+</script>
+</body>
+</html>
